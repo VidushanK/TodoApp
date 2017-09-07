@@ -6,11 +6,22 @@
     <meta name="theme-color" content="#000000">
 
     <title>React App</title>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+    <!-- ReactFire -->
+    <script src="https://cdn.firebase.com/libs/reactfire/1.0.0/reactfire.min.js"></script>
+    <!-- Initialize the Firebase SDK -->
+    <script>
+      var config = {
+        apiKey: "AIzaSyDOqwoRs6eNsl6TmqjC8QYdGAJmwgOU9T0",
+        authDomain: "reactcodechallenge.firebaseapp.com",
+        databaseURL: "https://reactcodechallenge.firebaseio.com",
+      };
+      firebase.initializeApp(config);
+    </script>
   </head>
   <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
     <div id="root"></div>
   </body>
 </html>
