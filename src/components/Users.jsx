@@ -15,8 +15,9 @@ class Users extends React.Component{
     this.firebaseRef.limitToLast(25).on('value', function(dataSnapshot) {
       var users = [];
       dataSnapshot.forEach(function(childSnapshot) {
-        var user = childSnapshot.val();
+        var user = childSnapshot.val()
         user['.key'] = childSnapshot.key;
+        console.log(user['.key'])
         users.push(user);
       });
 
@@ -51,7 +52,9 @@ class Users extends React.Component{
   render() {
     return (
       <div id="sidebar-wrapper">
+
       <div id="users">
+        <h1> Users </h1>
       <ViewUsers className="todoForm form-horizontal" users={ this.state.users } />
       </div>
       <div id="user-wrapper">

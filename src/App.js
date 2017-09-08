@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../assets/styles/App.scss';
-import Tasks from './Tasks.jsx';
-import Users from './Users.jsx'
+import './assets/styles/App.scss';
+import Tasks from './components/Tasks.jsx';
+import Users from './components/Users.jsx'
 class App extends Component {
   constructor(props){
     super(props);

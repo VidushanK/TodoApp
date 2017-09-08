@@ -6,7 +6,8 @@ class Tasks extends React.Component{
     super(props);
     this.state = {
       items: [],
-      content: ''
+      content: '',
+      completed: false
     }
   }
 
@@ -47,20 +48,22 @@ class Tasks extends React.Component{
       });
     }
   }
+  completed(event) {
+        event.preventDefault();
+
+        this.props.toggle(this.props.todo);
+    }
 
   render() {
     return (
       <div className="commentForm vert-offset-top-2">
-      <ViewTasks items={ this.state.items } />
+      <h1 className="task-header"> Tasks! </h1>
+      <ViewTasks items={ this.state.items }  />
         <form className="todoForm form-horizontal" onSubmit={ this.handleSubmit.bind(this) }>
           <div className="col-md-10">
           <input className="form-control" placeholder="What do you need to do?" onChange={ this.onContent.bind(this) } value={ this.state.content } />
           </div>
-          <div className="row">
-            <div className="col-md-10 col-md-offset-2 text-right">
             <button className="btn btn-primary" >Add Tasks</button>
-            </div>
-          </div>
         </form>
       </div>
     );

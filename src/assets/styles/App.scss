@@ -2,102 +2,114 @@ body {
   background: #f7f7f7;
 }
 
-
 .App-header {
-  background-color: #3a3b3d;
   height: 75px;
   padding: 20px;
   color: White;
+  background: rgb(149, 149, 149);
+  /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(149, 149, 149, 1) 0%, rgba(13, 13, 13, 1) 46%, rgba(1, 1, 1, 1) 50%, rgba(10, 10, 10, 1) 53%, rgba(78, 78, 78, 1) 76%, rgba(56, 56, 56, 1) 87%, rgba(27, 27, 27, 1) 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(149, 149, 149, 1) 0%, rgba(13, 13, 13, 1) 46%, rgba(1, 1, 1, 1) 50%, rgba(10, 10, 10, 1) 53%, rgba(78, 78, 78, 1) 76%, rgba(56, 56, 56, 1) 87%, rgba(27, 27, 27, 1) 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(149, 149, 149, 1) 0%, rgba(13, 13, 13, 1) 46%, rgba(1, 1, 1, 1) 50%, rgba(10, 10, 10, 1) 53%, rgba(78, 78, 78, 1) 76%, rgba(56, 56, 56, 1) 87%, rgba(27, 27, 27, 1) 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  h2 {
+    margin: 5px;
+  }
 }
 
 .App-intro {
   font-size: large;
 }
-.Tasks{
-  margin-top: 50px;
 
-margin-left: 450px;
+.Tasks {
+  h1{
+    text-align: center;
+    border-bottom: black 2px solid;
+  }
+  .TaskWrapper{
+    display: block;
+    color: black;
+    text-indent: 20px;
+    line-height: 40px;
+  }
+  margin-top: 50px;
+  margin-left: 450px;
   width: auto;
-    height: auto;
-    background: #f7f7f7;
+  height: auto;
+  background: #f7f7f7;
 }
 
 div.Tasks li {
   font-size: 20px;
 }
 
-#users{
-  margin-bottom:50px;
+#users {
+  h1{
+    color: white;
+    text-align: center;
+    border-bottom: gray 2px solid;
+    margin-top: 0px;
+  }
+  margin-bottom: 50px;
 }
+
 #sidebar-wrapper {
-    padding-top: 50px;
-    z-index: 1000;
-    position: fixed;
-    left: 250px;
-    width: 0;
-    height: 100%;
-    margin-left: -250px;
-    overflow-y: auto;
-    background: #1b1c1d;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+  padding-top: 50px;
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 0;
+  height: 100%;
+  margin-left: -250px;
+  overflow-y: auto;
+  background: #1b1c1d;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
-#user-wrapper{
-  margin-left:50px;
+#user-wrapper {
+  margin-left: 50px;
 }
 
-#page-content-wrapper {
-    width: 100%;
-    position: absolute;
-    padding: 15px;
-}
 
 /* Sidebar Styles */
 
 .sidebar-nav {
-    position: absolute;
-    top: 0;
+  width: 450px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  li {
+    display: block;
+    color: white;
+    text-indent: 20px;
+    line-height: 40px;
+  }
+}
+
+@media (min-width: 768px) {
+  #wrapper {
+    padding-left: 250px;
+    &.toggled {
+      padding-left: 0;
+    }
+  }
+  #sidebar-wrapper {
     width: 450px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.sidebar-nav li {
-  display: block;
-  color: white;
-  text-indent: 20px;
-  line-height: 40px;
-}
-
-
-@media(min-width:768px) {
-    #wrapper {
-        padding-left: 250px;
-    }
-
-    #wrapper.toggled {
-        padding-left: 0;
-    }
-
-    #sidebar-wrapper {
-        width: 450px;
-    }
-
-    #wrapper.toggled #sidebar-wrapper {
-        width: 0;
-    }
-
-    #page-content-wrapper {
-        padding: 20px;
-        position: relative;
-    }
-
-    #wrapper.toggled #page-content-wrapper {
-        position: relative;
-        margin-right: 0;
-    }
+  }
+  #wrapper.toggled #sidebar-wrapper {
+    width: 0;
+  }
+  #page-content-wrapper {
+    padding: 20px;
+    position: relative;
+  }
+  #wrapper.toggled #page-content-wrapper {
+    position: relative;
+    margin-right: 0;
+  }
 }
