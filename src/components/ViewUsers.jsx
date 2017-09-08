@@ -8,6 +8,7 @@ class viewUsers extends React.Component {
       return (
         <li key={ index }>
           { user.content }
+          <button className="btn btn-danger pull-right" onClick={ _this.props.removeUser.bind(null, user['.key']) }>X </button>
         </li>
       );
     };

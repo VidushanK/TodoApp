@@ -17,7 +17,7 @@ class Users extends React.Component{
       dataSnapshot.forEach(function(childSnapshot) {
         var user = childSnapshot.val()
         user['.key'] = childSnapshot.key;
-        console.log(user['.key'])
+        // console.log(user['.key'])
         users.push(user);
       });
 
@@ -48,6 +48,10 @@ class Users extends React.Component{
       });
     }
   }
+  removeUser(key) {
+   var firebaseRef = firebase.database().ref('todoApp/users');
+   firebaseRef.child(key).remove();
+ }
 
   render() {
     return (
@@ -55,7 +59,7 @@ class Users extends React.Component{
 
       <div id="users">
         <h1> Users </h1>
-      <ViewUsers className="todoForm form-horizontal" users={ this.state.users } />
+      <ViewUsers className="todoForm form-horizontal" users={ this.state.users } removeUser={ this.removeUser }/>
       </div>
       <div id="user-wrapper">
         <form onSubmit={ this.handleSubmit.bind(this) }>

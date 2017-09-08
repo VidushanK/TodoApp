@@ -5,14 +5,16 @@ class Tasks extends React.Component{
   constructor(props) {
     super(props);
     this.state = {
+      uid: '',
+      key: 'bob',
       items: [],
       content: '',
       completed: false
     }
   }
 
-  componentWillMount() {
-    this.firebaseRef = firebase.database().ref('todoApp/users/tasks');
+  componentWillMount(users) {
+    this.firebaseRef = firebase.database().ref().child(`todoApp/users/${users}/tasks`);
     this.firebaseRef.limitToLast(25).on('value', function(dataSnapshot) {
       var items = [];
       dataSnapshot.forEach(function(childSnapshot) {
@@ -24,6 +26,7 @@ class Tasks extends React.Component{
       this.setState({
         items: items
       });
+            console.log(firebase.database().ref(`todoApp/users`));
     }.bind(this));
   }
 
