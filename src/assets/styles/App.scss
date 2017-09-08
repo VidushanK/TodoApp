@@ -1,29 +1,103 @@
-.App {
-  text-align: center;
+body {
+  background: #f7f7f7;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: #3a3b3d;
+  height: 75px;
   padding: 20px;
-  color: white;
+  color: White;
 }
 
 .App-intro {
   font-size: large;
 }
 .Tasks{
-  float: right;
+  margin-top: 50px;
+
+margin-left: 450px;
+  width: auto;
+    height: auto;
+    background: #f7f7f7;
 }
-.Users {
-  float: left;
+
+div.Tasks li {
+  font-size: 20px;
 }
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+
+#users{
+  margin-bottom:50px;
+}
+#sidebar-wrapper {
+    padding-top: 50px;
+    z-index: 1000;
+    position: fixed;
+    left: 250px;
+    width: 0;
+    height: 100%;
+    margin-left: -250px;
+    overflow-y: auto;
+    background: #1b1c1d;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#user-wrapper{
+  margin-left:50px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    position: absolute;
+    padding: 15px;
+}
+
+/* Sidebar Styles */
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 450px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+  display: block;
+  color: white;
+  text-indent: 20px;
+  line-height: 40px;
+}
+
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 250px;
+    }
+
+    #wrapper.toggled {
+        padding-left: 0;
+    }
+
+    #sidebar-wrapper {
+        width: 450px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 20px;
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
 }

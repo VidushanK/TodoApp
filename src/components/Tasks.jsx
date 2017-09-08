@@ -11,7 +11,7 @@ class Tasks extends React.Component{
   }
 
   componentWillMount() {
-    this.firebaseRef = firebase.database().ref('todoApp/tasks');
+    this.firebaseRef = firebase.database().ref('todoApp/users/tasks');
     this.firebaseRef.limitToLast(25).on('value', function(dataSnapshot) {
       var items = [];
       dataSnapshot.forEach(function(childSnapshot) {
@@ -50,11 +50,17 @@ class Tasks extends React.Component{
 
   render() {
     return (
-      <div>
+      <div className="commentForm vert-offset-top-2">
       <ViewTasks items={ this.state.items } />
-        <form onSubmit={ this.handleSubmit.bind(this) }>
-          <input onChange={ this.onContent.bind(this) } value={ this.state.content } />
-          <button>Add Tasks</button>
+        <form className="todoForm form-horizontal" onSubmit={ this.handleSubmit.bind(this) }>
+          <div className="col-md-10">
+          <input className="form-control" placeholder="What do you need to do?" onChange={ this.onContent.bind(this) } value={ this.state.content } />
+          </div>
+          <div className="row">
+            <div className="col-md-10 col-md-offset-2 text-right">
+            <button className="btn btn-primary" >Add Tasks</button>
+            </div>
+          </div>
         </form>
       </div>
     );

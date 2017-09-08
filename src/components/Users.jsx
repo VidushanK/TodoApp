@@ -50,12 +50,18 @@ class Users extends React.Component{
 
   render() {
     return (
-      <div>
-      <ViewUsers users={ this.state.users } />
+      <div id="sidebar-wrapper">
+      <div id="users">
+      <ViewUsers className="todoForm form-horizontal" users={ this.state.users } />
+      </div>
+      <div id="user-wrapper">
         <form onSubmit={ this.handleSubmit.bind(this) }>
-          <input onChange={ this.onContent.bind(this) } value={ this.state.content } />
-          <button>Add Users</button>
+        <div className="user-input">
+        <input onChange={ this.onContent.bind(this) } value={ this.state.content } />
+        <button className="btn btn-primary">Add Users</button>
+        </div>
         </form>
+      </div>
       </div>
     );
   }

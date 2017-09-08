@@ -11,7 +11,7 @@ class viewUsers extends React.Component {
         </li>
       );
     };
-    return <ul className="TaskWrapper">{ this.props.users.map(createUser) }</ul>;
+    return <ul className="sidebar-nav">{ this.props.users.map(createUser) }</ul>;
   }
 }
 export default viewUsers
