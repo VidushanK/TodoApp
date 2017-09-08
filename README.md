@@ -1,7 +1,7 @@
 # TodoApp
 A Basic To-Do List app created with React and Firebase.
 
-![](https://github.com/VidushanK/TodoApp/tree/master/docs/homepage.PNG)
+![](https://github.com/VidushanK/TodoApp/blob/master/docs/homepage.png)
 
 ## Installation:
 
