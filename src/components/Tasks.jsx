@@ -60,7 +60,7 @@ class Tasks extends React.Component{
   render() {
     return (
       <div className="commentForm vert-offset-top-2">
-      <h1 className="task-header"> Tasks! </h1>
+      <h1 className="task-header"> All Tasks! </h1>
       <ViewTasks items={ this.state.items }  />
         <form className="todoForm form-horizontal" onSubmit={ this.handleSubmit.bind(this) }>
           <div className="col-md-10">

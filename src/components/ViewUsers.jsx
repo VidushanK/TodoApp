@@ -5,6 +5,11 @@ class viewUsers extends React.Component {
   render() {
     var _this = this;
     var createUser = function(user, index) {
+      if (user.content === undefined ){
+        user.content = "All Tasks";
+      } else {
+        user.content;
+      }
       return (
         <li key={ index }>
           { user.content }

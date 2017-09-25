@@ -58,14 +58,14 @@ class Users extends React.Component{
       <div id="sidebar-wrapper">
 
       <div id="users">
-        <h1> Users </h1>
+        <h1> Todays Tasks! </h1>
       <ViewUsers className="todoForm form-horizontal" users={ this.state.users } removeUser={ this.removeUser }/>
       </div>
       <div id="user-wrapper">
         <form onSubmit={ this.handleSubmit.bind(this) }>
         <div className="user-input">
         <input onChange={ this.onContent.bind(this) } value={ this.state.content } />
-        <button className="btn btn-primary">Add Users</button>
+        <button className="btn btn-primary currentbutton">Add Todays Tasks!</button>
         </div>
         </form>
       </div>
